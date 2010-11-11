@@ -9,7 +9,11 @@ var Worker = require('../lib/webworker').Worker;
 var receivedMsg = false;
 var receivedExit = false;
 
-var w = new Worker(path.join(__dirname, 'workers', 'simple.js'));
+var w = new Worker(path.join(__dirname, 'workers', 'events.js'));
+
+w.on('assertOkay', function(){
+    console.log("Assert is okay!");
+});
 
 w.onmessage = function(e) {
     assert.ok('data' in e);
