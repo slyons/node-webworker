@@ -1,0 +1,3 @@
+[submodule "deps/node-websocket-client"]
+	path = deps/node-websocket-client
+	url = https://github.com/pgriess/node-websocket-client.git
