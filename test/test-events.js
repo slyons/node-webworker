@@ -11,10 +11,6 @@ var receivedExit = false;
 
 var w = new Worker(path.join(__dirname, 'workers', 'events.js'));
 
-w.on('assertOkay', function(){
-    console.log("Assert is okay!");
-});
-
 w.onmessage = function(e) {
     assert.ok('data' in e);
     assert.equal(e.data.bar, 'foo');
